@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="./plugins/sweetalert2/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/all.min.css">
@@ -475,29 +474,26 @@
         <div class="form-main">
             <div class="main-wrapper">
                 <h2 class="form-head">Contact From</h2>
-                <form class="form-wrapper">
+                <form class="form-wrapper" id="contactForm">
                     <div class="form-card">
-                        <input class="form-input" type="text" required="required" id="Name" />
+                        <input class="form-input" type="text" required="required" id="txt_name" />
                         <label class="form-label">Full Name</label>
                     </div>
-
                     <div class="form-card">
-                        <input class="form-input" type="email" required="required" id="Sender" />
-                        <label class="form-label">Email</label>
-                    </div>
-
-                    <div class="form-card">
-                        <input class="form-input" type="number" required="required" id="Mobile" />
+                        <input class="form-input" type="number" required="required" id="txt_mobile" />
                         <label class="form-label">Phone number</label>
                     </div>
-
                     <div class="form-card">
-                        <textarea class="form-textarea" id="message" maxlength="420" rows="3"
+                        <input class="form-input" type="email" required="required" id="txt_email" />
+                        <label class="form-label">Email</label>
+                    </div>
+                    <div class="form-card">
+                        <textarea class="form-textarea" id="txt_msg" maxlength="420" rows="3"
                             required="required"></textarea>
                         <label class="form-textarea-label">Message</label>
                     </div>
                     <div class="btn-wrap">
-                        <button onclick="sendMail()"> Submit </button>
+                        <button type="submit"> Submit </button>
                     </div>
                 </form>
             </div>
@@ -539,65 +535,72 @@
         </div>
     </div>
 
-
-    <div id="div_modal"></div>
-    <div class="modal fade" id="poupform">
+    <div class="modal fade" id="myModal2">
         <div class="modal-dialog wi-dt" role="document">
             <div class="modal-content design-form bg-change bg-change-2">
                 <div class="modal-header justify-content-right p-0 border-bottom-0">
                     <div class="text-center">
                         <img src="./img/popupimg.png" class="mb-2 ml-2" style="width: 64% !important;"
                             alt="Book Free Appointment">
-                        <h4 class="mb-4"> Book an Inquiry</h4>
+                        <h4 class="mb-4">Book your Spot Today</h4>
                     </div>
-                    <button type="button" onclick="popupclose()" class="closess  closse-mobile p-0"
-                        style="background-color: transparent; border:none;" data-dismiss="modal" aria-label="Close">
+                    <button type="button" onclick="popupclose()" class="closess closse-mobile p-0"
+                        style="background-color: transparent; border: none;" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true" class="p-0"><i class="fas fa-times"></i></span>
                     </button>
                 </div>
                 <div class="modal-body mb-0 p-0">
                     <div class="text-center d-block" id="formmi">
-                        <div class="row justify-content-center mb-4 p-3">
-                            <div class="col-md-11 pl-0">
-                                <div class="input-group align-items-center mb-3">
-                                    <span><i class="far fa-user"></i></span>
-                                    <input type="text" class="form-control fr" id="name" placeholder="Enter Your name">
-                                </div>
-                                <div class="input-group align-items-center mb-3">
-                                    <span><i class="fas fa-phone-alt"></i></span>
-                                    <input type="number" class="form-control fr" placeholder="Enter Your contact Number"
-                                        id="mobile">
-                                </div>
-                                <div class="input-group date-in align-items-center mb-3">
-                                    <span><i class="fas fa-comment-alt fa-flip-horizontal"></i></span>
-                                    <input type="text" class="form-control fr" id="goal"
-                                        placeholder="Enter Fitness Goal">
+                        <form id="myForm2">
+                            <div class="row justify-content-center mb-4 p-3">
+                                <div class="col-md-11 pl-0">
+                                    <div class="input-group align-items-center mb-3">
+                                        <span><i class="far fa-user"></i></span>
+                                        <input type="text" class="form-control fr" id="txt_offer_name"
+                                            placeholder="Enter Your name">
+                                    </div>
+                                    <div class="input-group align-items-center mb-3">
+                                        <span><i class="fas fa-phone-alt"></i></span>
+                                        <input type="number" class="form-control fr"
+                                            placeholder="Enter Your contact Number" id="txt_offer_mobile">
+                                    </div>
+                                    <div class="input-group date-in align-items-center mb-3">
+                                        <span><i class="fas fa-comment-alt fa-flip-horizontal"></i></span>
+                                        <select name="" class="form-control fr" required id="txt_cooking_class">
+                                            <option hidden>Select Cooking Class</option>
+                                            <option value="Gujarati Thali">Gujarati Thali</option>
+                                            <option value="Punjabi Thali">Punjabi Thali</option>
+                                            <option value="Fast Food">Fast Food</option>
+                                            <option value="Cakes">Cakes</option>
+                                            <option value="Chocolate">Chocolate</option>
+                                            <option value="South Indian">South Indian</option>
+                                            <option value="All Of the Above">All Of the Above</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <button class="btn btn-brand mb-3" type="button" >Inquiry Now</button>
+                            <div class="text-center">
+                                <button class="btn btn-brand mb-3" type="submit">Book Now</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-    </script>
-    <script src="./js/sweetalert2.js"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="js/jquery.min.js"></script>
+    <script src="./js/sweetalert2.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/app.js"></script>
+
     <script>
         function opneform() {
-            $('#poupform').modal('show');
+            $('#myModal2').modal('show');
         }
         function popupclose() {
-            $('#poupform').modal('hide');
+            $('#myModal2').modal('hide');
         }
 
         $(window).scroll(function () {
@@ -607,86 +610,117 @@
         });
     </script>
     <script>
-        (function () {
-            emailjs.init("ppj41FHwKRvb5bwNX"); // Replace with your actual service ID
-        })();
-
-        function sendMail() {
-            var name = document.getElementById("Name").value.trim();
-            var sender = document.getElementById("Sender").value.trim();
-            var mobile = document.getElementById("Mobile").value.trim();
-            var message = document.getElementById("message").value.trim();
-
-            if (!name || !sender || !mobile || !message) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Missing Information',
-                    text: 'Please fill in all the required fields.'
-                });
-                return false;
+        document.addEventListener('DOMContentLoaded', function () {
+            // Function to check if an email is valid
+            function isValidEmail(email) {
+                var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailPattern.test(email);
             }
 
-            if (!isValidEmail(sender)) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Invalid Email Address',
-                    text: 'Please enter a valid email address.'
-                });
-                return false;
+            // Function to check if a mobile number is valid
+            function isValidMobileNumber(mobile) {
+                var mobilePattern = /^\d{10}$/;
+                return mobilePattern.test(mobile);
             }
 
-            if (!isValidMobileNumber(mobile)) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Invalid Mobile Number',
-                    text: 'Please enter a valid mobile number.'
-                });
-                return false;
-            }
+            // Contact Form
+            const contactForm = document.getElementById('contactForm');
 
-            var params = {
-                Name: name,
-                Sender: sender,
-                Mobile: mobile,
-                message: message
-            };
+            contactForm.addEventListener('submit', function (event) {
+                event.preventDefault();
 
-            const serviceID = "service_wg1h97c";
-            const templateID = "template_08g6lov";
+                const name = document.getElementById('txt_name').value;
+                const mobile = document.getElementById('txt_mobile').value;
+                const email = document.getElementById('txt_email').value;
+                const message = document.getElementById('txt_msg').value;
 
-            emailjs.send(serviceID, templateID, params)
-                .then(function (response) {
-                    document.getElementById("Name").value = "";
-                    document.getElementById("Sender").value = "";
-                    document.getElementById("Mobile").value = "";
-                    document.getElementById("message").value = "";
+                if (!name || !email || !mobile || !message) {
+                    Swal.fire('Error!', 'Please fill in all the required fields.', 'error');
+                    return;
+                }
 
-                    console.log("Email sent successfully", response);
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Thank You!',
-                        text: 'Your message has been sent successfully. We will contact you soon.'
-                    });
+                if (!isValidEmail(email)) {
+                    Swal.fire('Error!', 'Invalid Email Address. Please enter a valid email address.', 'error');
+                    return;
+                }
+
+                if (!isValidMobileNumber(mobile)) {
+                    Swal.fire('Error!', 'Invalid Mobile Number. Please enter a valid mobile number.', 'error');
+                    return;
+                }
+
+                const formData = {
+                    name: name,
+                    mobile: mobile,
+                    email: email,
+                    subject: 'Firecook Inquiry',
+                    messages: message
+                };
+
+                fetch('https://admin.firecook.in/admin/inquiry', {
+                    method: 'POST',
+                    body: JSON.stringify(formData),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
                 })
-                .catch(function (error) {
-                    console.error("Error sending email", error);
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Error Sending Email',
-                        text: 'There was an error sending your message. Please try again later.'
+                    .then(response => {
+                        if (response.status === 201) {
+                            Swal.fire('Success!', 'Your message has been sent successfully.', 'success');
+                            contactForm.reset();
+                        } else {
+                            Swal.fire('Error!', 'Failed to send the message. Please try again later.', 'error');
+                        }
+                    })
+                    .catch(error => {
+                        Swal.fire('Error!', 'An error occurred while sending the message.', 'error');
                     });
-                });
-        }
+            });
 
-        function isValidEmail(email) {
-            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailPattern.test(email);
-        }
+            // Offer Form
+            const form = document.getElementById('myForm2');
 
-        function isValidMobileNumber(mobile) {
-            var mobilePattern = /^\d{10}$/;
-            return mobilePattern.test(mobile);
-        }
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const full_name = document.getElementById('txt_offer_name').value;
+                const mobile = document.getElementById('txt_offer_mobile').value;
+                const cookingClass = document.getElementById('txt_cooking_class').value;
+
+                if (!full_name || !mobile || cookingClass === "Select Cooking Class") {
+                    Swal.fire('Error!', 'Please fill in all the required fields.', 'error');
+                    return;
+                }
+
+                const formData = {
+                    name: full_name,
+                    mobile: mobile,
+                    email: 'N/A',
+                    subject: 'offer',
+                    messages: `Selected Cooking Class: ${cookingClass}`
+                };
+
+                fetch('https://admin.firecook.in/admin/inquiry', {
+                    method: 'POST',
+                    body: JSON.stringify(formData),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                    .then(response => {
+                        if (response.status === 201) {
+                            Swal.fire('Success!', 'Thank you for submitting!', 'success');
+                            form.reset();
+                            $('#myModal2').modal('hide');
+                        } else {
+                            Swal.fire('Error!', 'Failed to submit the form. Please try again later.', 'error');
+                        }
+                    })
+                    .catch(error => {
+                        Swal.fire('Error!', 'An error occurred while submitting the form.', 'error');
+                    });
+            });
+        });
     </script>
     <script type="text/javascript">
         $(function () {
