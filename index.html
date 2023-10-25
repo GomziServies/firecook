@@ -531,7 +531,6 @@
                 class="btn bg-white">
                 Book a class in ₹49
             </a>
-            <!--stripe payment link  https://buy.stripe.com/14kbLIcexcmR5eo5kk -->
         </div>
     </div>
 
@@ -542,7 +541,7 @@
                     <div class="text-center">
                         <img src="./img/popupimg.png" class="mb-2 ml-2" style="width: 64% !important;"
                             alt="Book Free Appointment">
-                        <h4 class="mb-4">Book your Spot Today</h4>
+                        <h4 class="mb-4">Book your Cooking Class</h4>
                     </div>
                     <button type="button" onclick="popupclose()" class="closess closse-mobile p-0"
                         style="background-color: transparent; border: none;" data-dismiss="modal" aria-label="Close">
@@ -709,9 +708,9 @@
                 })
                     .then(response => {
                         if (response.status === 201) {
-                            Swal.fire('Success!', 'Thank you for submitting!', 'success');
                             form.reset();
                             $('#myModal2').modal('hide');
+                            window.location.href = 'https://buy.stripe.com/14kbLIcexcmR5eo5kk';
                         } else {
                             Swal.fire('Error!', 'Failed to submit the form. Please try again later.', 'error');
                         }
