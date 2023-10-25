@@ -80,7 +80,7 @@
                                     At Firecook Cooking Academy, we provide the skills and knowledge necessary to excel
                                     in the world of cooking. Our expert instructors and internationally accredited
                                     certifications will empower you to become a master in the kitchen</p>
-                                <a href="https://buy.stripe.com/14kbLIcexcmR5eo5kk" class="btn btn-brand">Reserve Your
+                                <a onclick="opneform()" class="btn btn-brand">Reserve Your
                                     Spot Today</a>
                             </div>
                         </div>
@@ -133,7 +133,7 @@
                                     to mediocre desserts and hello to a world of heavenly cheesecake perfection!
                                 </p>
                                 <p class="px-3">Claim Your Spot and Conquer the Cheesecake Universe!</p>
-                                <a href="https://buy.stripe.com/14kbLIcexcmR5eo5kk" class="btn btn-brand">Reserve Your
+                                <a onclick="opneform()" class="btn btn-brand">Reserve Your
                                     Spot Today</a>
                             </div>
                         </div>
@@ -173,7 +173,7 @@
                         </div>
                         <div class="info-box">
                             <div class=" mt-3" style="margin: auto;">
-                                <a href="https://buy.stripe.com/14kbLIcexcmR5eo5kk" class="btn btn-brand"> Ready to Turn
+                                <a onclick="opneform()" class="btn btn-brand"> Ready to Turn
                                     Your Kitchen Into a Cheesecake
                                     Paradise?</a>
                             </div>
@@ -201,7 +201,7 @@
                         <p> Learn the fundamentals of cooking from our
                             experienced chefs.
                         </p>
-                        <a href="https://buy.stripe.com/14kbLIcexcmR5eo5kk" class="btn btn-brand">Book Now</a>
+                        <a onclick="opneform()" class="btn btn-brand">Book Now</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -211,7 +211,7 @@
                         <p>Explore the nutritional aspects of cooking, just like our
                             Diploma in Nutrition course.
                         </p>
-                        <a href="https://buy.stripe.com/14kbLIcexcmR5eo5kk" class="btn btn-brand">Book Now</a>
+                        <a onclick="opneform()" class="btn btn-brand">Book Now</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -220,7 +220,7 @@
                         <h5>Specialized Techniques</h5>
                         <p>Discover advanced culinary techniques, such as those
                             taught in our Functional Training Workshop.</p>
-                        <a href="https://buy.stripe.com/14kbLIcexcmR5eo5kk" class="btn btn-brand">Book Now</a>
+                        <a onclick="opneform()" class="btn btn-brand">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -232,7 +232,7 @@
                             <h5>Culinary Inspiration</h5>
                             <p>Get inspired by industry experts with years of experience.
                                 Reserve Your Spot Today</p>
-                            <a href="https://buy.stripe.com/14kbLIcexcmR5eo5kk" class="btn btn-brand">Book Now</a>
+                            <a onclick="opneform()" class="btn btn-brand">Book Now</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
@@ -242,7 +242,7 @@
                             <p>Participate in interactive cooking workshops,
                                 similar to our TRX Band Workshop and Tabata Workshop.
                             </p>
-                            <a href="https://buy.stripe.com/14kbLIcexcmR5eo5kk" class="btn btn-brand">Book Now</a>
+                            <a onclick="opneform()" class="btn btn-brand">Book Now</a>
                         </div>
                     </div>
                 </div>
@@ -530,61 +530,54 @@
 
     <div class="floting-btn d-block d-md-none">
         <div class="col-12 px-0 text-center">
-            <a href="https://buy.stripe.com/14kbLIcexcmR5eo5kk"
+            <a onclick="opneform()"
                 style="border: 3px solid #FF4D29; color: #FF4D29; font-size: 25px; font-weight: 600; width: 100vw;"
                 class="btn bg-white">
                 Book a class in ₹49
             </a>
+            <!--stripe payment link  https://buy.stripe.com/14kbLIcexcmR5eo5kk -->
         </div>
     </div>
 
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-            <div class="modal-content">
-                <div class="modal-body p-0">
-                    <div class="container-fluid">
-                        <div class="row gy-4">
-                            <div class="col-lg-4 col-sm-12 bg-cover"
-                                style="background-image: url(img/c2.jpg); min-height:300px;">
-                                <div>
-
+    <div id="div_modal"></div>
+    <div class="modal fade" id="poupform">
+        <div class="modal-dialog wi-dt" role="document">
+            <div class="modal-content design-form bg-change bg-change-2">
+                <div class="modal-header justify-content-right p-0 border-bottom-0">
+                    <div class="text-center">
+                        <img src="./img/popupimg.png" class="mb-2 ml-2" style="width: 64% !important;"
+                            alt="Book Free Appointment">
+                        <h4 class="mb-4"> Book an Inquiry</h4>
+                    </div>
+                    <button type="button" onclick="popupclose()" class="closess  closse-mobile p-0"
+                        style="background-color: transparent; border:none;" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="p-0"><i class="fas fa-times"></i></span>
+                    </button>
+                </div>
+                <div class="modal-body mb-0 p-0">
+                    <div class="text-center d-block" id="formmi">
+                        <div class="row justify-content-center mb-4 p-3">
+                            <div class="col-md-11 pl-0">
+                                <div class="input-group align-items-center mb-3">
+                                    <span><i class="far fa-user"></i></span>
+                                    <input type="text" class="form-control fr" id="name" placeholder="Enter Your name">
+                                </div>
+                                <div class="input-group align-items-center mb-3">
+                                    <span><i class="fas fa-phone-alt"></i></span>
+                                    <input type="number" class="form-control fr" placeholder="Enter Your contact Number"
+                                        id="mobile">
+                                </div>
+                                <div class="input-group date-in align-items-center mb-3">
+                                    <span><i class="fas fa-comment-alt fa-flip-horizontal"></i></span>
+                                    <input type="text" class="form-control fr" id="goal"
+                                        placeholder="Enter Fitness Goal">
                                 </div>
                             </div>
-                            <div class="col-lg-8">
-                                <form class="p-lg-5 col-12 row g-3">
-                                    <div>
-                                        <h1>Get in touch</h1>
-                                        <p>Fell free to contact us and we will get back to you as soon as possible</p>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <label for="userName" class="form-label">First name</label>
-                                        <input type="text" class="form-control" placeholder="Jon" id="userName"
-                                            aria-describedby="emailHelp">
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <label for="userName" class="form-label">Last name</label>
-                                        <input type="text" class="form-control" placeholder="Doe" id="userName"
-                                            aria-describedby="emailHelp">
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="userName" class="form-label">Email address</label>
-                                        <input type="email" class="form-control" placeholder="Johndoe@example.com"
-                                            id="userName" aria-describedby="emailHelp">
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="exampleInputEmail1" class="form-label">Enter Message</label>
-                                        <textarea name="" placeholder="This is looking great and nice."
-                                            class="form-control" id="" rows="4"></textarea>
-                                    </div>
-
-                                    <div class="col-12">
-                                        <button type="submit" class="btn btn-brand">Send Message</button>
-                                    </div>
-                                </form>
-                            </div>
                         </div>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-brand mb-3" type="button" >Inquiry Now</button>
                     </div>
                 </div>
             </div>
@@ -599,6 +592,20 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/app.js"></script>
+    <script>
+        function opneform() {
+            $('#poupform').modal('show');
+        }
+        function popupclose() {
+            $('#poupform').modal('hide');
+        }
+
+        $(window).scroll(function () {
+            var scrolled = $(window).scrollTop();
+            if (scrolled > 200) $('.btn-flot').fadeIn('slow');
+            if (scrolled < 200) $('.btn-flot').fadeOut('slow');
+        });
+    </script>
     <script>
         (function () {
             emailjs.init("ppj41FHwKRvb5bwNX"); // Replace with your actual service ID
