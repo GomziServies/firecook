@@ -155,9 +155,10 @@ section {
 }
 
 .social-icons a:hover {
-    background-color: #fff;
-    color: var(--brand);
+    background-color: #780101;
+    color: #fff;
 }
+
 
 .conditions-section {
     margin: 20px 0;
@@ -254,7 +255,7 @@ section {
     width: 90px;
 }
 
-.closess{
+.closess {
     top: 3px;
     left: 335px;
     position: absolute;
@@ -902,6 +903,6 @@ input.form-control {
     top: 0;
 }
 
-.modal-dialog{
+.modal-dialog {
     top: 10%;
 }
